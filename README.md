@@ -1,1 +1,4 @@
-# kurista_beginner
+クリ★スタさんが配布されているデザインカンプからコーディングしました。
+
+デザインカンプ配布元：https://crestadesign.org/cording-first/
+【コーディング課題】XDからコーディングをしよう【初級編】
