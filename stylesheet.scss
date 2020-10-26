@@ -1,0 +1,356 @@
+// ファイル読み込み
+@import 'reset';
+@import 'config';
+
+/* header ===============================================*/
+.header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 7.5rem;
+  justify-content: space-between;
+  background-color: $main-color;
+  border-bottom: 2px solid white;
+}
+
+.header-icon {
+  padding-left: 12rem;
+  padding-top: 2rem;
+  letter-spacing: 0em;
+  @include sp {
+    padding-left: $padding-sp;
+    padding-top: 2.4rem;
+  }
+  &__text {
+    font-family: $font-family-heading;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0em;
+  }
+}
+
+.header-nav {
+  padding-right: 12rem;
+  padding-top: 2.7rem;
+  @include sp {
+    padding-right: $padding-sp;
+  }
+  &__flex {
+    display: flex;
+    justify-content: flex-end;
+    @include sp {
+      display: none;
+    }
+  }
+  &__list {
+    padding-left: 5.3rem;
+    font-family: $font-family-heading;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+  }
+  &__humberger {
+    display: none;
+    &:hover {
+      cursor: pointer;
+    }
+    @include sp {
+      display: block;
+    }
+  }
+}
+
+.humberger-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $main-color;
+  z-index: 90;
+  overflow-y: hidden;
+  &__close-button {
+    position: absolute;
+    top: 3rem;
+    right: 1.5rem;
+    cursor: pointer;
+  }
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__link {
+    padding-bottom: 5rem;
+    font-family: $font-family-heading;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+/* jumbotron ==============================================*/
+.jumbotron {
+  position: relative;
+  width: 100%;
+  height: 74rem;
+  background-image: url("img/fv-bgi@2x.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10.3rem; //基本的にBlock要素にmarginを指定しないが、.jumbotronの下に空白を儲けることを優先
+  @include sp {
+    height: 59rem;
+    background-image: url("img/fv-bgi_sp@2x.jpg");
+  }
+  &__title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3.5rem 4.2rem 3.4rem;
+    border: 2px solid white;
+    font-family: $font-family-heading;
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: white;
+    white-space: nowrap;
+    @include sp {
+      padding: 3rem 4rem;
+      font-size: 3rem;
+    }
+  }
+}
+
+/* About ==============================================*/
+.about {
+  box-sizing: content-box;
+  max-width: $max-width-pc;
+  height: auto;
+  margin: 0 auto; //中央寄せはBlock要素にmarginを使ってよいこととする
+  padding: 0 $padding-pc 16rem;
+  @include sp {
+    padding: 0 $padding-sp 15.3rem;
+  }
+  &__title {
+    @include title;
+    padding-bottom: 7.2rem;
+    text-align: center;
+  }
+  &__sub-title {
+    @include sub-title;
+    padding-bottom: 2.5rem;
+    @include sp {
+      padding-bottom: 1.7rem;
+    }
+  }
+  &__text {
+    @include text;
+  }
+}
+
+/* Service ==============================================*/
+.service {
+  box-sizing: content-box;
+  max-width: $max-width-pc;
+  height: auto;
+  margin: 0 auto; //中央寄せはBlock要素にmarginを使ってよいこととする
+  padding: 0 $padding-pc 15rem;
+  @include sp {
+    padding: 0 $padding-sp 15.5rem;
+  }
+  &__title {
+    @include title;
+    padding-bottom: 7.5rem;
+    text-align: center;
+    @include sp {
+      padding-bottom: 7rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include sp {
+      display: block;
+    }
+    &--reverse {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      @include sp {
+        display: block;
+      }
+    }
+  }
+}
+
+.service-card {
+  padding-bottom: 5rem;
+  &:last-child {
+    padding-bottom: 0;
+  }
+  &__item {
+    width: 46.5%;
+    padding-top: 1.5rem;
+    @include sp {
+      width: 100%;
+      padding-top: 0;
+      padding-bottom: 3.5rem;
+    }
+  }
+  &__title {
+    @include sub-title;
+    padding-bottom: 2.5rem;
+    @include sp {
+      padding-bottom: 1.8rem;
+    }
+  }
+  &__text {
+    @include text;
+  }
+  &__img {
+    width: 46.5%;
+    object-fit: cover;
+    @include sp {
+      width: 100%;
+      height: 15rem;
+    }
+  }
+}
+
+/* News ==============================================*/
+.news {
+  box-sizing: content-box;
+  max-width: $max-width-pc;
+  height: auto;
+  margin: 0 auto; //中央寄せはBlock要素にmarginを使ってよいこととする
+  padding: 0 $padding-pc 15.8rem;
+  @include sp {
+    padding: 0 2.8rem 10.5rem;
+  }
+  &__title {
+    @include title;
+    padding-bottom: 7.7rem;
+    text-align: center;
+    @include sp {
+      padding-bottom: 7.1rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 31%;
+    @include sp {
+      width: 100%;
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.news-card {
+  background-color: white;
+  box-shadow: 0 0 6px rgba($color: $main-color, $alpha: .4);
+  &__img {
+    width: 100%;
+  }
+  &__text {
+    padding: 2.5rem 3.2rem 2.5rem 3.4rem;
+    font-family: $font-family-small-text;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    color: $main-color;
+  }
+}
+
+/* News ==============================================*/
+.contacts {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  @include sp {
+    padding: 0 $padding-sp 5rem;
+  }
+  &__title {
+    padding-bottom: 6.9rem;
+    font-family: $font-family-text;
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    color: $main-color;
+    text-align: center;
+  }
+  &__label {
+    padding-bottom: .3rem;
+    font-family: $font-family-small-text;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    color: $main-color;
+  }
+  &__name, &__tel, &__mail {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 2.2rem;
+    outline: 1px solid #141414;
+    font-family: $font-family-small-text;
+    font-size: 2rem;
+    color: $main-color;
+  }
+  &__text {
+    width: 100%;
+    height: 17.1rem;
+    margin-bottom: 5rem;
+    outline: 1px solid #141414;
+    font-family: $font-family-small-text;
+    font-size: 2rem;
+    color: $main-color;
+  }
+  &__submit {
+    display: block;
+    width: 23.5rem;
+    height: 5.9rem;
+    margin: 0 auto;
+    background-color: $main-color;
+    border-radius: 3rem;
+    font-family: $font-family-button;
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+}
+
+/* footer ==============================================*/
+.footer {
+  width: 100%;
+  height: 7.9rem;
+  background-color: $main-color;
+  @include sp {
+    height: 6rem;
+  }
+  &__copyright {
+    font-family: $font-family-heading;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    line-height: 7.9rem;
+    color: white;
+    text-align: center;
+    @include sp {
+      line-height: 6rem;
+    }
+  }
+}

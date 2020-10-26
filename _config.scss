@@ -1,0 +1,68 @@
+/* htmlの基底フォントサイズを10pxに ===============*/
+html {
+  font-size: 62.5%; /* -> 10px; */
+}
+
+/* 主要な色 ======================================*/
+$main-color:#1B1310;
+
+/* フォント =====================================*/
+$font-family-heading: 'Roboto', sans-serif;
+$font-family-text: 'Noto Sans JP', sans-serif;
+$font-family-small-text: 'Hiragino Kaku Gothic ProN', sans-serif;
+$font-family-button: 'Avenir', sans-serif;
+
+/* 主要な幅 ====================================*/
+// PCサイズ======================/
+// PCサイズよく使うpadding値
+$padding-pc: 20.5rem;
+// PCサイズのコンテンツ最大幅
+$max-width-pc:103rem; //1030px
+//  sp(smart phone)サイズ ========/
+// メディアクエリ用
+$sp: 56em; //780px safariエラー防止のためem
+// PCサイズよく使うpadding値
+$padding-sp: 1.5rem;
+
+/* レスポンシブル ==========================================*/
+@mixin sp {
+  @media screen and (max-width: $sp) {
+    @content;
+  }
+}
+
+/* 文字スタイル ==========================================*/
+@mixin title {
+	font-family: $font-family-heading;;
+	font-size: 3.6rem;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	color: $main-color;
+}
+
+@mixin sub-title {
+	font-family: $font-family-text;
+	font-size: 2.2rem;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	line-height: 4.8rem;
+	color: $main-color;
+	@include sp {
+		font-size: 2rem;
+		line-height: 4rem;
+	}
+}
+
+@mixin text {
+	font-family: $font-family-text;
+	font-size: 1.4rem;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	line-height: 3rem;
+	color: $main-color;
+}
+
+/* その他クラス ==========================================*/
+.scroll-lock {
+	overflow: hidden;
+}
