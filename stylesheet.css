@@ -716,6 +716,34 @@ html {
   color: #1B1310;
 }
 
+.presented {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.presented__text {
+  padding-bottom: 1rem;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.presented__link {
+  display: block;
+  padding: 1rem;
+  border-radius: 20rem;
+  background-color: #ECA359;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.presented__link:hover {
+  opacity: .8;
+}
+
 /* Service ==============================================*/
 .service {
   -webkit-box-sizing: content-box;
