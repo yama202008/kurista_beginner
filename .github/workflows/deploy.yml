@@ -25,4 +25,4 @@ jobs:
           SSH_PORT: 8022
           SSH_USER: c4781309
           SSH_HOST: www148.conoha.ne.jp
-          SSH_DIR:  ~/public_html/test.yama-portfolio-2020.site
+          SSH_DIR:  ~/public_html/yama-portfolio-2020.site/kurista-first
