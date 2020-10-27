@@ -720,14 +720,29 @@ html {
   position: absolute;
   top: 3rem;
   left: 3rem;
-  padding: 2rem;
   text-align: center;
+}
+
+@media screen and (max-width: 56em) {
+  .presented {
+    top: 2rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
 }
 
 .presented__text {
   padding-bottom: 1rem;
   font-size: 1.6rem;
   color: white;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 56em) {
+  .presented__text {
+    font-size: 1.4rem;
+  }
 }
 
 .presented__link {
@@ -742,6 +757,22 @@ html {
 
 .presented__link:hover {
   opacity: .8;
+}
+
+@media screen and (max-width: 56em) {
+  .presented__link {
+    font-size: 1.6rem;
+  }
+}
+
+.presented__br {
+  display: none;
+}
+
+@media screen and (max-width: 56em) {
+  .presented__br {
+    display: block;
+  }
 }
 
 /* Service ==============================================*/

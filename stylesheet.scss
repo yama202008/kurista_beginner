@@ -159,13 +159,20 @@
   position: absolute;
   top: 3rem;
   left:3rem;
-  padding: 2rem;
-  // border: 1px solid white;
   text-align: center;
+  @include sp {
+    top: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
   &__text {
     padding-bottom: 1rem;
     font-size: 1.6rem;
     color: white;
+    white-space: nowrap;
+    @include sp {
+      font-size: 1.4rem;
+    }
   }
   &__link {
     display: block;
@@ -177,6 +184,15 @@
     color: white;
     &:hover {
       opacity: .8;
+    }
+    @include sp {
+      font-size: 1.6rem;
+    }
+  }
+  &__br {
+    display: none;
+    @include sp {
+      display: block;
     }
   }
 }
